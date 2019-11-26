@@ -92,8 +92,8 @@ func (c *authOperator) handleOAuthConfig(
 		GenericAPIServerConfig: configv1.GenericAPIServerConfig{
 			ServingInfo: configv1.HTTPServingInfo{
 				ServingInfo: configv1.ServingInfo{
-					BindAddress: fmt.Sprintf("0.0.0.0:%d", 6443),
-					BindNetwork: "tcp4",
+					BindAddress: fmt.Sprintf("[::]:%d", 6443),
+					BindNetwork: "tcp6",
 					// we have valid serving certs provided by service-ca
 					// this is our main server cert which is used if SNI does not match
 					CertInfo: configv1.CertInfo{
